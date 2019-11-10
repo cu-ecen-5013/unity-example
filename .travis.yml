@@ -2,4 +2,5 @@ language: c
 script:
         - mkdir build
         - cd build && cmake ..
+        - cd ..
         - ./test.sh
