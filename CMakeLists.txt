@@ -1,3 +1,8 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(cmake-example)
 add_executable(cmake-example file1.c file2.c main.c)
+project(cmake-example-tests)
+add_subdirectory(Unity)
+include_directories(Unity/src .)
+add_executable(cmake-example-tests file1.c test/Test_file1.c test/test_runners/Test_file1_Runner.c)
+target_link_libraries(cmake-example-tests unity)
