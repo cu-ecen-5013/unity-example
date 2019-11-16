@@ -32,6 +32,7 @@ void test_FindFunction_WhichIsBroken_ShouldReturnZeroIfItemIsNotInList_WhichWork
 
 void test_FindFunction_WhichIsBroken_ShouldReturnTheIndexForItemsInList_WhichWillFailBecauseOurFunctionUnderTestIsBroken(void)
 {
+  TEST_IGNORE_MESSAGE("Ignoring this test since we expect it to fail");
   /* You should see this line fail in your test summary */
   TEST_ASSERT_EQUAL(1, FindFunction_WhichIsBroken(34));
 
@@ -59,6 +60,7 @@ void test_FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValueAg
 
 void test_FunctionWhichReturnsLocalVariable_ShouldReturnCurrentCounter_ButFailsBecauseThisTestIsActuallyFlawed(void)
 {
+    TEST_IGNORE_MESSAGE("Ignoring this test since we expect it to fail");
     /* Sometimes you get the test wrong.  When that happens, you get a failure too... and a quick look should tell
      * you what actually happened...which in this case was a failure to setup the initial condition. */
     TEST_ASSERT_EQUAL_HEX(0x1234, FunctionWhichReturnsLocalVariable());

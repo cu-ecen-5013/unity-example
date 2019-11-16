@@ -79,4 +79,6 @@ if [ -n "$missing_expected_content" ] || [ -n "$contains_unexpected_content" ]; 
 	echo "At least one test failed"
 	exit 1
 fi
-exit 0
+
+./cmake-example-tests
+exit $?
