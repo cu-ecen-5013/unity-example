@@ -1,14 +1,24 @@
-[![Build Status](https://travis-ci.com/cu-ecen-5013/cmake-example.svg?branch=master)](https://travis-ci.com/cu-ecen-5013/cmake-example)
+[![Build Status](https://travis-ci.com/cu-ecen-5013/unity-example.svg?branch=master)](https://travis-ci.com/cu-ecen-5013/unity-example)
 
-# cmake-example
-A project demonstrating the use of [cmake](https://cmake.org/) for C projects
+# unity-example
+An example project using the [Unity](https://github.com/ThrowTheSwitch/Unity) unit test environment
 
-This project is a part of a multi-part series of projects which show you the basics of automatic dependency generation for C projects.  See  also:
- * GNU Make automatic dependency generation: https://github.com/cu-ecen-5013/auto-dependency-generation-example
- * Autoconf/Automake : https://github.com/cu-ecen-5013/autoconf-automake-example
+This example is built on top of the [cmake-example](https://github.com/cu-ecen-5013/cmake-example) project.  For changes made to the cmake-example project, see the pull request [here](https://github.com/cu-ecen-5013/cmake-example/pull/1).
+
+The test/test_runners/Test_file1_Runner.c file was generated using the command:
+```
+ruby Unity/auto/generate_test_runner.rb \
+      test/Test_file1.c  \
+      test/test_runners/Test_file1_Runner.c
+```
 
 ## Testing
-Run `make test` to invoke the [test.sh](test.sh) script.  This script touches header and source files and checks make output to ensure exactly expected build steps are being invoked.
-
-## Contributing
-Pull requests are welcome for any improvement suggestions.  Please use the issues tab to open.
+Synchronize the Unity git submodule using
+```
+git submodule init
+git submodule update
+```
+Then run ./test.sh to:
+ * Build the project executable and test executable.
+ * Run the standard cmake dependency tests from the [cmake-example](https://github.com/cu-ecen-5013/cmake-example) project.
+ * Run the Unity tests built into the cmake-example-test executable.
